@@ -11,35 +11,20 @@ Through Prosper, people can invest in one another in ways that are both financia
 
 A small subset of the original Prosper data was selected for exploration. The cleaned subset (df_sub_clean) contains **14 columns** and **83,982 rows**. The columns are:
 
-
 - ListingKey
-
 - ListingCreationDate
-
 - Term
-
 - LoanStatus
-
 - BorrowerAPR
-
 - ProsperRating (numeric)
-
 - ListingCategory (numeric)
-
 - EmploymentStatus
-
 - CreditScoreRangeLower
-
 - InquiriesLast6Months
-
 - IncomeRange
-
 - StatedMonthlyIncome
-
 - MonthlyLoanPayment
-
 - Year_listingCreation (a derived column containing the year extracted from ListingCreationDate)
-
 
 
 ## Data Wrangling Process
@@ -47,7 +32,6 @@ A small subset of the original Prosper data was selected for exploration. The cl
 **1. Gathering**
 
 - Download the CSV file (prosperLoanData.csv).
-
 - Load it into a pandas DataFrame.
 
 **2. Assessing**
@@ -57,19 +41,12 @@ Inspecting the data visually and programmatically.
 **Quality issues identified:**
 
 - Convert ListingCreationDate from object to datetime.
-
 - Convert Term to a categorical variable.
-
 - Drop rows with null values in: CreditScoreRangeLower, InquiriesLast6Months, and ProsperRating (numeric).
-
 - Convert CreditScoreRangeLower, InquiriesLast6Months, and ProsperRating (numeric) from float to integer.
-
 - Extract the year from ListingCreationDate and store it in a new column (Year_listingCreation) for easier exploration.
-
 - Convert the new year column to categorical.
-
 - Convert ListingCategory (numeric) to categorical.
-
 - Drop duplicates.
 
 **3. Cleaning**
@@ -94,7 +71,7 @@ Inspecting the data visually and programmatically.
 
 - Borrower APRs were relatively high in 2011 and lower in 2014.
 
-- As credit score increases and recent inquiries decrease, Prosper Rating increases and APR decreases.
+- As the credit score increases and recent inquiries decrease, Prosper Rating increases and APR decreases.
 
 - The lowest APRs belong to borrowers with an IncomeRange ≥ 100,000 dollars, followed by 75,000–99,999 dollars, especially for loans with a Current status.
 
